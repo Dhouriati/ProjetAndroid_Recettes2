@@ -15,6 +15,7 @@ import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RecetteIO {
@@ -101,6 +102,7 @@ public class RecetteIO {
                 recipeJson.put("rating", recipe.getRating());
                 recipeJson.put("voters", recipe.getVoters());
                 recipeJson.put("type", recipe.getType());
+                //recipeJson.put("comment", recipe.getComment());
 
                 jsonArray.put(recipeJson);
             }
@@ -119,6 +121,7 @@ public class RecetteIO {
     // Fonction pour charger une liste d'objets DataRecette à partir d'un fichier JSON
     public static ArrayList<DataRecette> loadRecipesFromJson(Context context) {
         ArrayList<DataRecette> recipes = new ArrayList<>();
+        //List<String> comments = new ArrayList<>();
 
         try {
             // Utilise la fonction readJsonFromFile pour lire le JSONObject depuis le fichier
@@ -146,6 +149,7 @@ public class RecetteIO {
                             (float) recipeJson.optDouble("rating"),
                             recipeJson.optInt("voters"),
                             recipeJson.optString("type")
+                            //comments
                     );
 
                     // Ajoute la recette à la liste
@@ -202,6 +206,15 @@ public class RecetteIO {
                         1,
                         "Vegetarian"
                 ));
+                listerecette.add(new DataRecette(
+                        "Chili con carne", "kidney beans",
+                        "Wheat", "Beef", "Chili sauce with spices",
+                        "Cut cooked beef into meatballs." ,"Add the kidney beans",
+                        "Add wheat", "Add the chili sauce and mix well.",
+                        3,
+                        1,
+                        "No Restriction"
+                ));
                 saveRecipesToJson(context, listerecette);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -241,6 +254,7 @@ public class RecetteIO {
                         recipeObject.put("rating", updatedRecipe.getRating());
                         recipeObject.put("voters", updatedRecipe.getVoters());
                         recipeObject.put("type", updatedRecipe.getType());
+                        //recipeObject.put("commment", updatedRecipe.getComment());
 
 
                         break;
