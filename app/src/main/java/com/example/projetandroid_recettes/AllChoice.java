@@ -99,13 +99,21 @@ public class AllChoice extends AppCompatActivity {
             intent.putExtra("platsChoice", valueChoice);
             intent.putExtra("regimeChoice", value);
             intent.putExtra("tempChoice", valueTemp);
+
             startActivity(intent);
         }
         //if meal is cold, go to see the recipe
         if (valueTemp.equals("cold_meal")) {
+            String valueBase = getIntent().getStringExtra("selectedBase");
+            String valueProt = getIntent().getStringExtra("selectedProteins");
+
             Intent intent = new Intent(this, Recette.class);
             intent.putExtra("regimeChoice", value);
             intent.putExtra("tempChoice", valueTemp);
+            intent.putExtra("selectedBase", valueBase);
+            intent.putExtra("selectedProteins", valueProt);
+            //intent.putExtra("selectedLegumes", selectedLegumes.toString());
+
             startActivity(intent);
         }
 

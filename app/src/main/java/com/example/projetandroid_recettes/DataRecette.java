@@ -117,7 +117,7 @@ public class DataRecette {
                "Eggs and milk", "Mango", "Butter and sugar",
                "Cut mango in small pieces" ,"Place the flour in a bowl and form a well. Add whole eggs, sugar, oil and butter into this well.",
                "Mix gently with a whisk, adding the milk as you go.", "Heat an oiled frying pan. Cook all the crêpes in this way over a low heat.",
-               3,
+               4,
                1,
                "Dessert", "I like it"
        ));
@@ -126,7 +126,7 @@ public class DataRecette {
                "Wheat", "Beef", "Chili sauce with spices",
                "Cut cooked beef into meatballs." ,"Add the kidney beans",
                "Add wheat", "Add the chili sauce and mix well.",
-               3,
+               5,
                1,
                "No Restriction", "I like it"
        ));
@@ -135,9 +135,18 @@ public class DataRecette {
                "Egg", "diced ham", "peas",
                "Cook the rice" ,"Make scrambled eggs",
                "Add peas, diced ham and scrambled eggs", "Mix together and serve hot",
-               3,
+               4,
                1,
                "MainCourse", "I like it"
+       ));
+       listerecette.add(new DataRecette(
+               "Vegetarian pastabox", "Pasta",
+               "mushroom", "cheese", "avocado",
+               "Cook pasta" ,"Add mushroom",
+               "Add your favorite cheese and avocado", "Mix together and enjoy !",
+               2,
+               1,
+               "Vegetarian", "I like it"
        ));
         return listerecette;
     }

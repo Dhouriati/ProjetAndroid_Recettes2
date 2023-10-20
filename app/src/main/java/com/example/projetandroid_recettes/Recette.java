@@ -86,6 +86,7 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
         textViewAllComment.setText(larecette.getComment().toString());
         */
     }
+
     private void choiceRecipe() {
         String value = getIntent().getStringExtra("regimeChoice");
         String valueTemp = getIntent().getStringExtra("tempChoice");
@@ -117,12 +118,17 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
                 Log.d("Recipe", "No recipe corresponds to the choice of dish");
                 larecette=afficheTest.get(0); //default value if error
             }
+            displayRecipe();//display recipe selected
         } else if (valueTemp.equals("cold_meal")) {
+            // Values for the base and protein
+            String valueBase = getIntent().getStringExtra("selectedBase");
+            String valueProt = getIntent().getStringExtra("selectedProteins");
+
             Log.d("Recipe", "Passage through the cold meal loop");
 
-            for (DataRecette recipe : afficheTest) {
-                if (recipe.getType().equals(value)) {
-                    filteredRecipes.add(recipe);
+            for (DataRecette recette : afficheTest) {
+                if (recette.getType().equals(value)) {
+                    filteredRecipes.add(recette);
                 }
             }
             if (!filteredRecipes.isEmpty()) {
@@ -133,12 +139,11 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
             } else {
                 Log.d("Recipe", "No recipe corresponds to the choice of dish");
             }
+            displayRecipe();
         } else {
             Log.d("Recipe", "Passage through the error loop");
             larecette = afficheTest.get(0);//default value if error
         }
-
-        displayRecipe();//display recipe selected
     }
     private void demanderPermission() {
         // check if we have permission to continue
