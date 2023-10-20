@@ -24,9 +24,9 @@ public class base_PlatFroids extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, data);
 
 
-        // Spécifie la mise en page déroulante utilisée lorsque le Spinner est ouvert
+        // Specifies the scrolling layout used when the Spinner is opened
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Applique l'adaptateur au Spinner
+        // Apply adapter to Spinner
         choiceBase.setAdapter(adapter);
     }
     public void ChoiceProt (View v) {

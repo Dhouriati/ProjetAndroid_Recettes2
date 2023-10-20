@@ -57,30 +57,31 @@ public class PlatsFroidsLegumes extends AppCompatActivity {
 
 
     }
-    // Écouteur pour les changements d'état des chips
+    // Earphones for chip status changes
     private CompoundButton.OnCheckedChangeListener chipCheckedChangeListener =
             new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
-                        // Si la chip est cochée, vérifiez le nombre de chips sélectionnées
+                        // If the chip is checked, check the number of selected chips
                         if (selectedChipCount < 3) {
                             selectedChipCount++;
                         } else {
-                            // Si l'utilisateur essaie de cocher plus de trois chips, décochez la dernière
+                            // If the user tries to check more than three chips, uncheck the last one.
                             buttonView.setChecked(false);
-                            Toast.makeText(PlatsFroidsLegumes.this, "Vous ne pouvez sélectionner que 3 éléments", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PlatsFroidsLegumes.this, "You can only select between 1 and 3 items.", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        // Si la chip est décochée, décrémente le nombre de chips sélectionnées
+                        // If the chip is unchecked, decrements the number of selected chips.
                         selectedChipCount--;
                     }
                 }
             };
+
     public void Rating (View v) {
         if (selectedChipCount <= 3) {
             StringBuilder selectedLegumes = new StringBuilder();
-            // Ajoutez chaque chip sélectionnée à la liste
+            // Add each selected chip to the list
             for (Chip chip : legumeChips) {
                 if (chip.isChecked()) {
                     selectedLegumes.append(chip.getText()).append(", ");
@@ -90,7 +91,7 @@ public class PlatsFroidsLegumes extends AppCompatActivity {
                 selectedLegumes.delete(selectedLegumes.length() - 2, selectedLegumes.length());
             }
             Intent intent = new Intent(this, AllChoice.class);
-            // Ajoutez les extras à l'intent
+            // Add extras to intent
             intent.putExtra("selectedLegumes", selectedLegumes.toString());
             intent.putExtra("selectedProteins", this.getIntent().getStringExtra("selectedProteins"));
             intent.putExtra("selectedBase", this.getIntent().getStringExtra("selectedBase"));
@@ -98,7 +99,7 @@ public class PlatsFroidsLegumes extends AppCompatActivity {
             intent.putExtra("regimeChoice", this.getIntent().getStringExtra("regimeChoice"));
             startActivity(intent);
         } else
-            Toast.makeText(this, "Veuillez sélectionner exactement 3 éléments", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You can only select between 1 and 3 items.", Toast.LENGTH_SHORT).show();
     }
 
     public void onClick (View v) {
