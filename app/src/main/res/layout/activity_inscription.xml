@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.254"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblProfile"
-        tools:ignore="TextSizeCheck" />
+        tools:ignore="TextSizeCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/lblSex"
@@ -51,20 +51,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAge" />
+        app:layout_constraintTop_toBottomOf="@+id/editAge"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnWelcome"
         style="@style/btnBF"
-        android:layout_width="160dp"
-        android:layout_height="54dp"
+        android:layout_width="192dp"
+        android:layout_height="75dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="100dp"
         android:onClick="submitUserInfo"
         android:text="@string/btnWelcome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGpGender" />
 
@@ -72,7 +73,7 @@
         android:id="@+id/editAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="@string/editAge"
         android:importantForAutofill="no"
@@ -80,6 +81,7 @@
         android:minHeight="48dp"
         android:textColorHint="#8D6E63"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.353"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblAge"
         tools:ignore="LabelFor,TextContrastCheck" />
@@ -87,13 +89,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBack"
         style="@style/btnBC"
-        android:layout_width="147dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="184dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="28dp"
         android:onClick="onClick"
         android:text="@string/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnWelcome" />
 
