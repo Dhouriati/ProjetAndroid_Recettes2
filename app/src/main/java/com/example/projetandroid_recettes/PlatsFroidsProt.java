@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -19,7 +18,7 @@ public class PlatsFroidsProt extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plats_froids_prot);
 
-        proteinRadioGroup = findViewById(R.id.proteinRadioGroup);
+        proteinRadioGroup = findViewById(R.id.proteinRadioGroup2);
         String regimeChoice = getIntent().getStringExtra("regimeChoice");
         Log.d("PlatsFroidsProt", "Regime Choice: " + regimeChoice);
 

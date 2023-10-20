@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/chooseProt"
-        android:layout_width="366dp"
-        android:layout_height="52dp"
+        android:layout_width="358dp"
+        android:layout_height="67dp"
         android:layout_marginTop="24dp"
         android:text="@string/chooseProt"
         android:textColor="@color/bg_txtTitle"
@@ -18,50 +18,23 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnNextP"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextSizeCheck" />
 
     <RadioGroup
-        android:id="@+id/proteinRadioGroup"
-        android:layout_width="708dp"
-        android:layout_height="183dp"
-        android:layout_marginTop="12dp"
+        android:id="@+id/proteineRadioGroup"
+        android:layout_width="287dp"
+        android:layout_height="159dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNextP"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseProt">
-
-        <RadioButton
-            android:id="@+id/salmon"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="48dp"
-            android:clickable="false"
-            android:text="@string/salmon"
-            android:textColor="@color/light_blue_900"
-            android:textSize="22sp" />
-
-        <RadioButton
-            android:id="@+id/tuna"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:clickable="false"
-            android:minHeight="48dp"
-            android:text="@string/tuna"
-            android:textColor="@color/light_blue_900"
-            android:textSize="22sp"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <RadioButton
-            android:id="@+id/tofu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:text="@string/tofu"
-            android:textColor="@color/light_blue_900"
-            android:textSize="22sp" />
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toEndOf="@+id/proteinRadioGroup2"
+        app:layout_constraintTop_toBottomOf="@+id/chooseProt"
+        app:layout_constraintVertical_bias="0.661"
+        tools:ignore="TextSizeCheck">
 
         <RadioButton
             android:id="@+id/vegetable_steak"
@@ -95,32 +68,79 @@
             android:textColor="@color/light_blue_900"
             android:textSize="22sp"
             tools:ignore="TouchTargetSizeCheck" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/proteinRadioGroup2"
+        android:layout_width="295dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseProt"
+        app:layout_constraintVertical_bias="0.476">
+
+        <RadioButton
+            android:id="@+id/salmon"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:clickable="false"
+            android:text="@string/salmon"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp" />
+
+        <RadioButton
+            android:id="@+id/tuna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:clickable="false"
+            android:minHeight="48dp"
+            android:text="@string/tuna"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/tofu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="@string/tofu"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp" />
 
     </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNextP"
         style="@style/btnBF"
-        android:layout_width="291dp"
-        android:layout_height="68dp"
-        android:layout_marginEnd="64dp"
+        android:layout_width="242dp"
+        android:layout_height="72dp"
         android:onClick="ChoiceLeg"
         android:text="@string/btnNextR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintVertical_bias="0.887" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBack8"
         style="@style/btnBC"
-        android:layout_width="300dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="204dp"
+        android:layout_height="75dp"
         android:onClick="onClick"
         android:text="@string/btnBack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnNextP"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.896" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

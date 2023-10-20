@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.048" />
 
     <RadioGroup
-        android:id="@+id/proteinRadioGroup"
+        android:id="@+id/proteinRadioGroup2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
@@ -40,7 +40,8 @@
             android:clickable="false"
             android:text="@string/salmon"
             android:textColor="@color/light_blue_900"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            tools:ignore="VisualLintButtonSize" />
 
         <RadioButton
             android:id="@+id/tuna"
@@ -52,7 +53,7 @@
             android:text="@string/tuna"
             android:textColor="@color/light_blue_900"
             android:textSize="22sp"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
         <RadioButton
             android:id="@+id/tofu"
@@ -61,7 +62,8 @@
             android:layout_marginStart="48dp"
             android:text="@string/tofu"
             android:textColor="@color/light_blue_900"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            tools:ignore="VisualLintButtonSize" />
 
         <RadioButton
             android:id="@+id/vegetable_steak"
@@ -72,7 +74,7 @@
             android:text="@string/vegetable_steak"
             android:textColor="@color/light_blue_900"
             android:textSize="22sp"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
         <RadioButton
             android:id="@+id/beef"
@@ -82,7 +84,8 @@
             android:clickable="false"
             android:text="@string/beef"
             android:textColor="@color/light_blue_900"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            tools:ignore="VisualLintButtonSize" />
 
         <RadioButton
             android:id="@+id/marinated_chicken"
@@ -94,7 +97,7 @@
             android:text="@string/marinated_chicken"
             android:textColor="@color/light_blue_900"
             android:textSize="22sp"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
     </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton

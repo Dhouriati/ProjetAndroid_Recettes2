@@ -10,14 +10,15 @@
         android:id="@+id/printRegime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/printRegime"
         android:textColor="@color/bg_primary"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043"
         tools:textStyle="bold" />
 
     <Switch
@@ -29,10 +30,10 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonExit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintHorizontal_bias="0.287"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionRegime"
-        app:layout_constraintVertical_bias="0.225"
+        app:layout_constraintVertical_bias="0.111"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
@@ -46,8 +47,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/repVegan"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58"
         tools:ignore="TextContrastCheck,TextSizeCheck" />
 
     <TextView
@@ -62,7 +65,9 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonExit"
         app:layout_constraintEnd_toStartOf="@+id/switchRegime"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
 
     <TextView
         android:id="@+id/repVegan"
@@ -74,8 +79,10 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonExit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/switchRegime"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
         tools:ignore="TextSizeCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -90,20 +97,21 @@
         app:layout_constraintHorizontal_bias="0.829"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/anyRegime"
-        app:layout_constraintVertical_bias="0.363" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonExit"
         style="@style/btnBC"
         android:layout_width="174dp"
         android:layout_height="79dp"
-        android:layout_marginBottom="44dp"
         android:onClick="onClick"
         android:text="@string/buttonExit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonContinue"
-        app:layout_constraintHorizontal_bias="0.407"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.858" />
 
     <CheckBox
         android:id="@+id/anyRegime"
@@ -112,10 +120,12 @@
         android:layout_marginTop="44dp"
         android:text="@string/anyRegime"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.962"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionRegime"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

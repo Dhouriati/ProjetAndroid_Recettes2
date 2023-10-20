@@ -41,18 +41,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/lblRegimeChoice"
-            android:text="@string/lblRegimeChoice"
             style="@style/labelCard"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:text="@string/lblRegimeChoice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/regimeChoiceDisplay"
-            android:layout_width="match_parent"
+            android:layout_width="265dp"
             android:layout_height="wrap_content"
             android:text="TextView1"
             android:textColor="@color/colorDisplayChoice"
@@ -60,12 +62,11 @@
 
         <TextView
             android:id="@+id/lblTempChoice"
-            android:text="@string/lblTempChoice"
             style="@style/labelCard"
+            android:text="@string/lblTempChoice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tempChoiceDisplay"
@@ -132,10 +133,18 @@
             android:padding="16dp">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBack7"
+                style="@style/btnBC"
+                android:layout_width="304dp"
+                android:layout_height="87dp"
+                android:onClick="ronClick"
+                android:text="@string/btnBack" />
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnNextR"
                 style="@style/btnBF"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="332dp"
+                android:layout_height="85dp"
                 android:onClick="recipePage"
                 android:text="@string/btnNextR" />
         </LinearLayout>
@@ -147,13 +156,6 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnBack7"
-                style="@style/btnBC"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:onClick="ronClick"
-                android:text="@string/btnBack" />
         </LinearLayout>
 
     </LinearLayout>
