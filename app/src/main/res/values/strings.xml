@@ -47,16 +47,12 @@
 
     <string name="AllChoice">Here your Choices</string>
     <string name="lblRegimeChoice">Your Regime </string>
-    <string name="lblTempChoice">Your Meal Temperature </string>
-    <string name="lblEquipChoice">Your Cooking Equipment </string>
+    <string name="lblTempChoice">Your Meal Temperature :</string>
+    <string name="lblEquipChoice">Your Cooking Equipment :</string>
     <string name="lblPlatsChoice">What type of meal do you want ?</string>
     <string name="lblBaseChoice">The base you choose : </string>
     <string name="lblProteinChoice">Your source of protein : </string>
-    <string name="lblLegumeChoice">Your vegetables</string>
-
-    <string name="description_equip_Over">Over</string>
-    <string name="description_equip_Ond">Ond</string>
-    <string name="description_equip_Stove">Stove</string>
+    <string name="lblLegumeChoice">Your vegetables :</string>
 
     <!-- Display du message (cf Inscription.java) pour pouvoir traduire -->
     <string name="fill_information">Please fill in all the information</string>
@@ -71,7 +67,7 @@
 
     <!-- bottom menu -->
     <string name="profile">Profil</string>
-    <string name="home">Accueil</string>
+    <string name="home">Home</string>
 
     <string name="chooseProt">Select your protein</string>
     <string name="salmon">Salmon</string>
