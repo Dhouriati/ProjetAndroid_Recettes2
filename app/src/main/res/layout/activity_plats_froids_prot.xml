@@ -1,0 +1,124 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Button"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlatsFroidsProt">
+
+    <TextView
+        android:id="@+id/chooseProt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/chooseProt"
+        android:textColor="@color/bg_txtTitle"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/proteinRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseProt">
+
+        <RadioButton
+            android:id="@+id/salmon"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:clickable="false"
+            android:text="@string/salmon"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp" />
+
+        <RadioButton
+            android:id="@+id/tuna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:clickable="false"
+            android:minHeight="48dp"
+            android:text="@string/tuna"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/tofu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="@string/tofu"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp" />
+
+        <RadioButton
+            android:id="@+id/vegetable_steak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:minHeight="48dp"
+            android:text="@string/vegetable_steak"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/beef"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:clickable="false"
+            android:text="@string/beef"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp" />
+
+        <RadioButton
+            android:id="@+id/marinated_chicken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:clickable="false"
+            android:minHeight="48dp"
+            android:text="@string/marinated_chicken"
+            android:textColor="@color/light_blue_900"
+            android:textSize="22sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNextP"
+        style="@style/btnBF"
+        android:layout_width="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="ChoiceLeg"
+        android:text="@string/btnNextR"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_default="spread"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack8"
+        style="@style/btnBC"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="70dp"
+        android:text="@string/btnBack"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/activity_recipe_details.xml -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Nom de la recette -->
+
+        <!-- Liste des ingrédients -->
+        <TextView
+            android:id="@+id/textViewNomRecette"
+            android:layout_width="382dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Display recipe name"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewIngredients"
+            android:layout_width="382dp"
+            android:layout_height="111dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Display ingredients" />
+
+        <!-- Étapes à suivre -->
+        <TextView
+            android:id="@+id/textViewEtapes"
+            android:layout_width="377dp"
+            android:layout_height="215dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Display steps" />
+
+        <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+
+        <TextView
+            android:id="@+id/textViewComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is the different comments about this recipe" />
+
+        <TextView
+            android:id="@+id/textViewAllComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="All comments for this recipe" />
+
+        <TextView
+            android:id="@+id/textViewNote"
+            android:layout_width="392dp"
+            android:layout_height="47dp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:onClick="ratingPage"
+            />
+
+        <!-- Note de la recette -->
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">ProjetAndroid_Recettes</string>
+
+    <string name="PicturePng">PicturePng</string>
+    <string name="SurnameUser">Surname</string>
+    <string name="FirstnameUser">First name</string>
+    <string name="btnConnexion">LogIN</string>
+
+    <string name="lblProfile">Profile</string>
+    <string name="lblAge">What is your age?</string>
+    <string name="editAge">Input your age here</string>
+    <string name="lblSex">Your are a : </string>
+    <string name="rdBtnMan">Man</string>
+    <string name="rdBtnWoman">Woman</string>
+    <string name="btnWelcome">Welcome!</string>
+    <string name="btnBack">Back</string>
+
+
+    <string name="printRegime">Dietary regime</string>
+    <string name="questionRegime">Do you have a particular dietary regime?</string>
+    <string name="repVegetarian">Vegetarian</string>
+    <string name="repVegan">Vegan</string>
+    <string name="buttonContinue">Next</string>
+    <string name="buttonExit">Back</string>
+    <string name="anyRegime">Check this box if you dont have any dietary regime</string>
+
+    <string name="buttonExit1">Back</string>
+    <string name="Four">Oven</string>
+    <string name="MicroOnde">Microwave</string>
+    <string name="Plaques">Stove</string>
+    <string name="PrefEqui">Cooking equipment available</string>
+    <string name="Next">Continue</string>
+
+    <string name="baseFroid">Choose your base</string>
+    <string name="buttonC">Continue</string>
+
+    <string name="buttonContinue3">Continue</string>
+    <string name="MealChoiceHot">What meal do you want to prepare?</string>
+    <string name="DessertCheck">Dessert</string>
+    <string name="SaladCheck">Appetizer</string>
+    <string name="MainCourseCheck">Main Course</string>
+
+    <string name="buttonContinue2">Continue</string>
+    <string name="MealChoice">Do you want to prepare a hot or cold meal?</string>
+    <string name="description_cold_button">Cold</string>
+    <string name="description_hot_button">Hot</string>
+
+    <string name="AllChoice">Here your Choices</string>
+    <string name="lblRegimeChoice">Your Regime </string>
+    <string name="lblTempChoice">Your Meal Temperature </string>
+    <string name="lblEquipChoice">Your Cooking Equipment </string>
+    <string name="lblPlatsChoice">What type of meal do you want ?</string>
+    <string name="lblBaseChoice">The base you choose : </string>
+    <string name="lblProteinChoice">Your source of protein : </string>
+    <string name="lblLegumeChoice">Your vegetables</string>
+
+    <string name="description_equip_Over">Over</string>
+    <string name="description_equip_Ond">Ond</string>
+    <string name="description_equip_Stove">Stove</string>
+
+    <!-- Display du message (cf Inscription.java) pour pouvoir traduire -->
+    <string name="fill_information">Please fill in all the information</string>
+
+    <string name="lblrating"> Rating </string>
+    <string name="lblNameRatingRecette"> Pleases rate this recipe : </string>
+    <string name="btnSend"> Save </string>
+    <string name="Comment"> Your Comment </string>
+
+    <string name="hotmeal">Hot meal</string>
+    <string name="coldmeal">Cold meal</string>
+
+    <!-- bottom menu -->
+    <string name="profile">Profil</string>
+    <string name="home">Accueil</string>
+
+    <string name="chooseProt">Select your protein</string>
+    <string name="salmon">Salmon</string>
+    <string name="tuna">Tuna</string>
+    <string name="tofu">Tofu</string>
+    <string name="vegetable_steak">Vegetable Steak</string>
+    <string name="beef">Beef</string>
+    <string name="marinated_chicken">Marinated Chicken</string>
+
+    <string name="tomatoes">Tomatoes</string>
+    <string name="corn">Corn</string>
+    <string name="pomegranate">Pomegranate</string>
+    <string name="cucumbers">Cucumbers</string>
+    <string name="avocado">Avocado</string>
+    <string name="mango">Mango</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="select_vegetables">Select your vegetables (between 1 and 3)</string>
+    <string name="btnNextR">Your Recipe</string>
+
+
+
+
+</resources>

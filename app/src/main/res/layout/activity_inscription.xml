@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inscription">
+
+    <TextView
+        android:id="@+id/lblProfile"
+        android:layout_width="126dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/bg_primary"
+        android:text="@string/lblProfile"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/lblAge"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/lblAge"
+        android:textColor="@color/text_primary"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblProfile"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/lblSex"
+        android:layout_width="233dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="141dp"
+        android:text="@string/lblSex"
+        android:textColor="@color/text_primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAge" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnWelcome"
+        style="@style/btnBF"
+        android:layout_width="160dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="100dp"
+        android:onClick="submitUserInfo"
+        android:text="@string/btnWelcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGpGender" />
+
+    <EditText
+        android:id="@+id/editAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/editAge"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#8D6E63"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAge"
+        tools:ignore="LabelFor,TextContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack"
+        style="@style/btnBC"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:onClick="onClick"
+        android:text="@string/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnWelcome" />
+
+    <RadioGroup
+        android:id="@+id/radioGpGender"
+        android:layout_width="114dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSex"
+        tools:ignore="TextSizeCheck"
+        tools:textStyle="bold">
+
+        <RadioButton
+            android:id="@+id/rdBtnMan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rdBtnMan" />
+
+        <RadioButton
+            android:id="@+id/rdBtnWoman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/rdBtnWoman"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

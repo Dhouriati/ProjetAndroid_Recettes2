@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegimeDiet">
+
+    <TextView
+        android:id="@+id/printRegime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/printRegime"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <Switch
+        android:id="@+id/switchRegime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/anyRegime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionRegime"
+        app:layout_constraintVertical_bias="0.318"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/questionRegime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/questionRegime"
+        app:layout_constraintBottom_toTopOf="@+id/anyRegime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/printRegime"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <TextView
+        android:id="@+id/repVegetarian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="92dp"
+        android:text="@string/repVegetarian"
+        app:layout_constraintBottom_toTopOf="@+id/anyRegime"
+        app:layout_constraintEnd_toStartOf="@+id/switchRegime"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionRegime"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <TextView
+        android:id="@+id/repVegan"
+        android:layout_width="45dp"
+        android:layout_height="21dp"
+        android:text="@string/repVegan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502"
+        tools:ignore="TextSizeCheck" />
+
+    <Button
+        android:id="@+id/buttonContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonContinue"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintStart_toEndOf="@+id/buttonExit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="111dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/buttonExit"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.309"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anyRegime"
+        app:layout_constraintVertical_bias="0.654" />
+
+    <CheckBox
+        android:id="@+id/anyRegime"
+        android:layout_width="305dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/anyRegime"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/printRegime"
+        app:layout_constraintVertical_bias="0.932"
+        tools:ignore="TextSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

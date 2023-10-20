@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProjetAndroid_Recettes</string>
+    <string name="PicturePng">PhotoPng</string>
+    <string name="btnConnexion">Connexion</string>
+    <string name="lblAge">Quel est votre age</string>
+    <string name="lblSex">Vous êtes un/e:</string>
+    <string name="editAge">Entrez votre âge</string>
+    <string name="rdBtnMan">Homme</string>
+    <string name="rdBtnWoman">Femme</string>
+    <string name="btnWelcome">Bienvenue !</string>
+    <string name="btnBack">Retour</string>
+    <string name="buttonContinue">Continue</string>
+    <string name="buttonExit">Retour</string>
+    <string name="Plaques">Plaques</string>
+    <string name="MainCourseCheck">Plat Principal</string>
+    <string name="MealChoice">Voulez-vous un plats chaud ou un plat froid?</string>
+    <string name="description_cold_button">Froid</string>
+    <string name="description_hot_button">Chaud</string>
+    <string name="lblrating">Note</string>
+    <string name="btnSend">Sauvegarder</string>
+    <string name="hotmeal">Plat Chaud</string>
+    <string name="salmon">Saumon</string>
+    <string name="tuna">Thon</string>
+    <string name="vegetable_steak">Steak Végétale</string>
+    <string name="beef">Boeuf</string>
+    <string name="tomatoes">Tomates</string>
+    <string name="corn">Maïs</string>
+    <string name="avocado">Avocat</string>
+    <string name="mango">Mangue</string>
+    <string name="select_vegetables">Choisissez vos legumes (1 à 3)</string>
+    <string name="btnNextR">Votre Recette</string>
+</resources>

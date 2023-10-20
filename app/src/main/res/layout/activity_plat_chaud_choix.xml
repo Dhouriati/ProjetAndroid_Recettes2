@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="168dp"
+        android:layout_height="149dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/_978167" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="169dp"
+        android:layout_height="159dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.555"
+        app:srcCompat="@drawable/_3b4ea0e6d4e81812fa81c7d16c2062d" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="168dp"
+        android:layout_height="152dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26"
+        app:srcCompat="@drawable/_515183" />
+
+    <TextView
+        android:id="@+id/MealChoiceHot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MealChoiceHot"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        android:textSize="27sp"
+        android:textColor="@color/bg_txtTitle"/>
+
+    <CheckBox
+        android:id="@+id/MainCourseCheck"
+        android:layout_width="138dp"
+        android:layout_height="77dp"
+        android:text="@string/MainCourseCheck"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/DessertCheck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <CheckBox
+        android:id="@+id/SaladCheck"
+        android:layout_width="144dp"
+        android:layout_height="66dp"
+        android:text="@string/SaladCheck"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/MainCourseCheck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.715" />
+
+    <CheckBox
+        android:id="@+id/DessertCheck"
+        android:layout_width="138dp"
+        android:layout_height="74dp"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"
+        android:text="@string/DessertCheck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.761" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack4"
+        android:layout_width="139dp"
+        android:layout_height="56dp"
+        android:text="@string/btnBack"
+        style="@style/btnBC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

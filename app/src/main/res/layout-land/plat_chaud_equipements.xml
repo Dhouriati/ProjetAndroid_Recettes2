@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Plaques"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Plaques"
+        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlaquesPng"
+        app:layout_constraintVertical_bias="0.191" />
+
+    <TextView
+        android:id="@+id/PrefEqui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PrefEqui"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <ImageView
+        android:id="@+id/PicturePng"
+        android:layout_width="141dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/OndePng"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PrefEqui"
+        app:layout_constraintVertical_bias="0.166"
+        app:srcCompat="@drawable/_016061" />
+
+    <ImageView
+        android:id="@+id/OndePng"
+        android:layout_width="157dp"
+        android:layout_height="129dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PrefEqui"
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/_570179" />
+
+    <ImageView
+        android:id="@+id/PlaquesPng"
+        android:layout_width="139dp"
+        android:layout_height="137dp"
+        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PrefEqui"
+        app:layout_constraintVertical_bias="0.201"
+        app:srcCompat="@drawable/_101218" />
+
+    <TextView
+        android:id="@+id/Four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Four"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PicturePng"
+        app:layout_constraintVertical_bias="0.093" />
+
+    <TextView
+        android:id="@+id/MicroOnde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MicroOnde"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toEndOf="@+id/Four"
+        app:layout_constraintTop_toBottomOf="@+id/OndePng"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="152dp"
+        android:layout_height="51dp"
+        android:text="@string/Next"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PrefEqui"
+        app:layout_constraintVertical_bias="0.906" />
+</androidx.constraintlayout.widget.ConstraintLayout>

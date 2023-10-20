@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="scrollMain" >
+        <item name="android:background">@color/bg_thirdary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+    <style name="btnBF" parent="TextAppearance.AppCompat.Button">
+        <item name="android:background">@drawable/btn_bg_blue_f</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="labelCard">
+        <item name="android:layout_width">360dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:textColor">@color/text_thirdary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="btnBC" parent="TextAppearance.AppCompat.Button">
+        <item name="android:background">@drawable/btn_bg_blue_c</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
