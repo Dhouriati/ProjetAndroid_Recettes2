@@ -5,54 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/hotmeal"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonBack4"
+        style="@style/btnBC"
+        android:layout_width="148dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClick"
+        android:text="@string/buttonExit"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/plat_chaud" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/coldmeal"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBack4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.833"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828"
-        app:srcCompat="@drawable/plat_froid" />
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/MealChoice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="397dp"
+        android:layout_height="89dp"
         android:text="@string/MealChoice"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:textColor="@color/bg_primary"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageBtnHot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.437"
+        tools:ignore="TextSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/imageBtnHot"
+        android:layout_width="195dp"
+        android:layout_height="188dp"
+        android:layout_marginTop="88dp"
+        android:contentDescription="@string/description_hot_button"
         app:layout_constraintBottom_toTopOf="@+id/buttonBack4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.803"
+        app:srcCompat="@drawable/plat_chaud" />
 
-    <Button
-        android:id="@+id/buttonBack4"
-        android:layout_width="148dp"
-        android:layout_height="68dp"
-        android:text="@string/buttonContinue2"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageButton
+        android:id="@+id/imageBtnCold"
+        android:layout_width="179dp"
+        android:layout_height="181dp"
+        android:contentDescription="@string/description_cold_button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBack4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.795"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953" />
+        app:layout_constraintVertical_bias="0.883"
+        app:srcCompat="@drawable/plat_froid" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

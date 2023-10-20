@@ -13,12 +13,12 @@
         android:layout_marginTop="40dp"
         android:text="@string/printRegime"
         android:textColor="@color/bg_primary"
-        android:textSize="28sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:textStyle="bold"/>
+        tools:textStyle="bold" />
 
     <Switch
         android:id="@+id/switchRegime"
@@ -35,15 +35,15 @@
 
     <TextView
         android:id="@+id/questionRegime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="405dp"
+        android:layout_height="80dp"
         android:layout_marginTop="72dp"
         android:text="@string/questionRegime"
-        app:layout_constraintBottom_toTopOf="@+id/anyRegime"
-        android:textColor="@color/text_primary"
         android:textAlignment="center"
+        android:textColor="@color/text_primary"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/anyRegime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/printRegime"
@@ -53,6 +53,7 @@
         android:id="@+id/repVegetarian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="60dp"
         android:text="@string/repVegetarian"
@@ -79,26 +80,27 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonContinue"
         style="@style/btnBF"
-        android:layout_width="152dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="72dp"
+        android:layout_width="154dp"
+        android:layout_height="82dp"
+        android:layout_marginBottom="12dp"
         android:onClick="ChoiceHot"
         android:text="@string/buttonContinue"
         app:layout_constraintBottom_toTopOf="@+id/buttonExit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonExit"
-        android:layout_width="111dp"
-        android:layout_height="49dp"
+        style="@style/btnBC"
+        android:layout_width="154dp"
+        android:layout_height="76dp"
         android:layout_marginBottom="60dp"
         android:onClick="onClick"
         android:text="@string/buttonExit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        style="@style/btnBC"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/anyRegime"
@@ -106,12 +108,13 @@
         android:layout_height="70dp"
         android:layout_marginTop="304dp"
         android:text="@string/anyRegime"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/printRegime"
-        app:layout_constraintVertical_bias="0.117"
-        tools:ignore="TextSizeCheck"
-        android:textSize="25sp"/>
+        app:layout_constraintVertical_bias="0.642"
+        tools:ignore="TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
