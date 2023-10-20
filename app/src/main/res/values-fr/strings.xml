@@ -65,8 +65,13 @@
     <string name="mushrooms">Champignons</string>
     <string name="select_vegetables">Choisissez vos legumes (entre 1 à 3)</string>
     <string name="btnNextR">Votre Recette</string>
+    <string name="buttonC">Continuer</string>
+    <string name="buttonC">C</string>
     <string name="buttonContinue3">Continuer</string>
     <string name="DessertCheck">Dessert</string>
     <string name="SaladCheck">Entrée</string>
     <string name="buttonContinue2">Continuer</string>
+    <string name="description_equip_Over">Four</string>
+    <string name="description_equip_Ond">Micro-Onde</string>
+    <string name="description_equip_Stove">Plaques Chauffantes</string>
 </resources>

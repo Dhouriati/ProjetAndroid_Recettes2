@@ -54,6 +54,10 @@
     <string name="lblProteinChoice">Your source of protein : </string>
     <string name="lblLegumeChoice">Your vegetables :</string>
 
+    <string name="description_equip_Over">Over</string>
+    <string name="description_equip_Ond">Ond</string>
+    <string name="description_equip_Stove">Stove</string>
+
     <!-- Display du message (cf Inscription.java) pour pouvoir traduire -->
     <string name="fill_information">Please fill in all the information</string>
 
