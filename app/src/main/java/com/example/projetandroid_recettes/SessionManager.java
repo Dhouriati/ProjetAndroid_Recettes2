@@ -1,10 +1,7 @@
 package com.example.projetandroid_recettes;
 
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.SharedPreferences;
-
-import java.io.File;
 
 public class SessionManager {
     private SharedPreferences sharedPreferences;
@@ -20,7 +17,7 @@ public class SessionManager {
     public SessionManager(Context context) {
         this.context = context;
         this.MODE = Context.MODE_PRIVATE;
-        //récupère le fichier
+        //Recover the file
         this.sharedPreferences = context.getSharedPreferences(this.PREFERENCES_NAME, this.MODE);
         this.sharedPreferencesEditor = this.sharedPreferences.edit();
     }

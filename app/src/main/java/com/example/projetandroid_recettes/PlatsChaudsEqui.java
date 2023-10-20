@@ -1,4 +1,5 @@
 package com.example.projetandroid_recettes;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,11 +44,11 @@ public class PlatsChaudsEqui extends AppCompatActivity {
 
     }
 
-    public void nextPlatChaud(String value_cold) {
-        Log.d("Chaud_Froid", "imageBtnCold clicked");
-        // Handle logic for imageBtnCold click
+    public void nextPlatChaud(String value_equip) {
+        Log.d("Equipment", "imageBtnEquip clicked");
+        // Handle logic for imageBtnEquip click
         Intent intent = new Intent(PlatsChaudsEqui.this, PlatsChaudsChoix.class);
-        intent.putExtra("equipChoice", value_cold);
+        intent.putExtra("equipChoice", value_equip);
         intent.putExtra("tempChoice", this.getIntent().getStringExtra("tempChoice"));
         intent.putExtra("regimeChoice", this.getIntent().getStringExtra("regimeChoice"));
         startActivity(intent);

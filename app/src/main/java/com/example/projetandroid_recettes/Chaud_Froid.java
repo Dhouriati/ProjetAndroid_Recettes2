@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class Chaud_Froid extends AppCompatActivity {
@@ -24,22 +23,24 @@ public class Chaud_Froid extends AppCompatActivity {
         Log.d("Chaud_Froid", "onCreate executed");
 
         imageBtnCold.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 nextActivityFroid("cold_meal");
             }
         });
         imageBtnHot.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 nextActivity("hot_meal");
             }
         });
     }
-    //Intent pour passer à aux équipements
+    //Intent to switch to equipment
     public void nextActivity(String value_hot) {
         Log.d("Chaud_Froid", "imageBtnCold clicked");
-        // Handle logic for hot recipe click
+        // Handle logic for imageBtnHot click
         Intent intent = new Intent(Chaud_Froid.this, PlatsChaudsEqui.class);
         intent.putExtra("tempChoice", value_hot);
         intent.putExtra("regimeChoice", this.getIntent().getStringExtra("regimeChoice"));
@@ -54,8 +55,6 @@ public class Chaud_Froid extends AppCompatActivity {
         intent.putExtra("regimeChoice", this.getIntent().getStringExtra("regimeChoice"));
         startActivity(intent);
     }
-
-
 
     public void onClick (View v) {
         finish();
