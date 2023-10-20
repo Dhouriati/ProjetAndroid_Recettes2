@@ -1,19 +1,13 @@
 package com.example.projetandroid_recettes;
 
-import static com.example.projetandroid_recettes.DbHelper.TABLE_USER;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText SurnameUser;
@@ -41,22 +35,21 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d("MainActivity", "Button clicked with firstName: " + firstName + " and lastName: " + lastName);
 
-                //Utilisateur existe
+                //if the user exist
                 if (checkUserExistence(firstName, lastName)) {
-                    // L'utilisateur existe, redirige vers l'activité RegimeDiet
+                    // The user exist, redirect to RegimeDiet activity
                     Intent myIntent = new Intent(MainActivity.this, RegimeDiet.class);
                     startActivity(myIntent);
-                    Log.d("MainActivity", "L'utilisateur existe");
+                    Log.d("MainActivity", "User exist");
 
-                    //Insérer les information dans la sessionManager
+                    //Insert information on SessionManager
                     sessionManager.insertUser(firstName, lastName);
                 } else {
-                    // L'utilisateur n'existe pas, redirige vers l'activité d'inscription
+                    // If the user doesn't exist, redirect to registration activity
                     Intent intent = new Intent(MainActivity.this, Inscription.class);
-                    //Intent intent = new Intent(MainActivity.this, RegimeDiet.class);
                     intent.putExtra("firstName", firstName);
                     intent.putExtra("lastName", lastName);
-                    Log.i("MainActivity", "utilisateur n'existe pas");
+                    Log.i("MainActivity", "User doesn't exist");
                     startActivity(intent);
 
                 }
@@ -64,14 +57,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /*public void connection(View v) {
-        Intent intent = new Intent(this, Inscription.class);
-        startActivity(intent);
-    }*/
-
     private boolean checkUserExistence(String firstName, String lastName) {
-        // Vérification dans la bdd
-        // Boolean true si utilisateur présent
+        // Verify on the BDD
+        // Boolean true if the user is present
         return dbHelper.checkUserExistence(firstName, lastName);
     }
 

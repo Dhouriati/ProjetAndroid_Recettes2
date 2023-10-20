@@ -1,4 +1,5 @@
 package com.example.projetandroid_recettes;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +18,7 @@ public class PlatsChaudsChoix extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plat_chaud_choix);
 
-        // Déclaration des CheckBox
+        // Declare CheckBox
         mainCourseCheck = findViewById(R.id.MainCourseCheck);
         saladCheck = findViewById(R.id.SaladCheck);
         dessertCheck = findViewById(R.id.DessertCheck);
@@ -41,12 +42,12 @@ public class PlatsChaudsChoix extends AppCompatActivity {
             }
         });
     }
-
-    public void nextAllChoice(String value_hot) {
+    //
+    public void nextAllChoice(String value_choice) {
         Log.d("CheckedBox", "Type of recipe clicked");
         // Handle logic for type of recipe click
         Intent intent = new Intent(PlatsChaudsChoix.this, AllChoice.class);
-        intent.putExtra("platsChoice", value_hot);
+        intent.putExtra("platsChoice", value_choice);
         intent.putExtra("equipChoice", this.getIntent().getStringExtra("equipChoice"));
         intent.putExtra("tempChoice", this.getIntent().getStringExtra("tempChoice"));
         intent.putExtra("regimeChoice", this.getIntent().getStringExtra("regimeChoice"));

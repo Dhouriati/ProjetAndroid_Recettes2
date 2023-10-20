@@ -23,13 +23,13 @@ public class PlatsFroidsProt extends AppCompatActivity {
         Log.d("PlatsFroidsProt", "Regime Choice: " + regimeChoice);
 
 
-        // Désactive certaines options en fonction du choix de régime
+        // Disables some options depending on the plan selected
         if ("vegan".equals(regimeChoice)) {
             disableRadioButton(R.id.salmon);
             disableRadioButton(R.id.tuna);
             disableRadioButton(R.id.beef);
             disableRadioButton(R.id.marinated_chicken);
-        } else if ("vegetarien".equals(regimeChoice)) {
+        } else if ("vegetarian".equals(regimeChoice)) {
             disableRadioButton(R.id.beef);
             disableRadioButton(R.id.marinated_chicken);
         }
@@ -52,8 +52,7 @@ public class PlatsFroidsProt extends AppCompatActivity {
                 startActivity(intent);
             }
         } else {
-
-            Toast.makeText(this, "Veuillez sélectionner une option", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please select an option", Toast.LENGTH_SHORT).show();
         }
     }
     private void disableRadioButton(int radioButtonId) {
