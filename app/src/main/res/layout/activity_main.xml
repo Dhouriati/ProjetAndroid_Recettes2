@@ -61,15 +61,15 @@
 
     <ImageView
         android:id="@+id/Usericon"
-        android:layout_width="152dp"
-        android:layout_height="154dp"
+        android:layout_width="268dp"
+        android:layout_height="167dp"
         android:layout_marginTop="70dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.688"
-        app:srcCompat="@drawable/icons8_user_64"
+        app:srcCompat="@drawable/sans_titre"
         tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>
