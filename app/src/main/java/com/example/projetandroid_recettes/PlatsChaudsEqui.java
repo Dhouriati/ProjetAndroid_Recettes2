@@ -24,19 +24,19 @@ public class PlatsChaudsEqui extends AppCompatActivity {
         imageBtnOver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextPlatChaud("You choose an Over ");
+                nextPlatChaud("Over");
             }
         });
         ImageBtnStove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextPlatChaud("You choose a Stove ");
+                nextPlatChaud("Stove");
             }
         });
         ImageBtnOnde.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextPlatChaud("You choose a Microwave ");
+                nextPlatChaud("Microwave");
             }
         });
 

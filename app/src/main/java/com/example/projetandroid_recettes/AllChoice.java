@@ -3,6 +3,7 @@ package com.example.projetandroid_recettes;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -86,8 +87,29 @@ public class AllChoice extends AppCompatActivity {
     public void recipePage (View v) {
 
         String value = getIntent().getStringExtra("regimeChoice");
-        Intent intent = new Intent(this, Recette.class);
-        intent.putExtra("regimeChoice", value);
-        startActivity(intent);
+        String valueTemp = getIntent().getStringExtra("tempChoice");
+        Log.d("RecetteIO", "ma valeur est : "+valueTemp);
+
+
+        if (valueTemp.equals("hot_meal")) {
+            String valueChoice = getIntent().getStringExtra("platsChoice");
+
+            Intent intent = new Intent(this, Recette.class);
+            intent.putExtra("platsChoice", valueChoice);
+            intent.putExtra("regimeChoice", value);
+            intent.putExtra("tempChoice", valueTemp);
+            startActivity(intent);
+        }
+        if (valueTemp.equals("cold_meal")) {
+            Intent intent = new Intent(this, Recette.class);
+            intent.putExtra("regimeChoice", value);
+            intent.putExtra("tempChoice", valueTemp);
+            startActivity(intent);
+        }
+
+    }
+
+    public void onClick (View v) {
+        finish();
     }
 }

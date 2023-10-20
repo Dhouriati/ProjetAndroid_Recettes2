@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,9 +26,10 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
     private TextView textViewIngredients;
     private TextView textViewEtapes;
     private TextView textViewRating;
-    private ArrayList<DataRecette> afficheTest;
+    private TextView textViewAllComment;
+    private ArrayList<DataRecette> afficheTest = DataRecette.InfosRecette();
     private DataRecette larecette;
-
+    //private List<String> printComment = larecette.getComment();
     private String[] permissionsWriteRead = {Manifest.permission.READ_MEDIA_IMAGES,Manifest.permission.READ_MEDIA_VIDEO,Manifest.permission.READ_MEDIA_AUDIO};
     private String[] oldPermissionsWriteRead = {Manifest.permission.READ_EXTERNAL_STORAGE,  Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -43,10 +43,9 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
         textViewIngredients = findViewById(R.id.textViewIngredients);
         textViewEtapes = findViewById(R.id.textViewEtapes);
         textViewRating=findViewById(R.id.textViewRating);
+        textViewAllComment=findViewById(R.id.textViewAllComment);
 
-
-
-        Button btnNext = findViewById(R.id.btnNext);
+        //Button btnNext = findViewById(R.id.btnNext);
         demanderPermission();
     }
     public void ratingPage (View v) {
@@ -57,7 +56,7 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
     }
 
 
-    private void displayQuestion() {
+    private void displayRecipe() {
         // Display information about the recipe
         textViewNomRecette.setText(larecette.getNomRecipe());
 
@@ -76,34 +75,71 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
         step = step + "Last step : "+larecette.getStep4();
         textViewEtapes.setText(step);
         textViewRating.setText("Note : "+larecette.getRating()+"/"+(larecette.getVoters()*5));
+        textViewAllComment.setText(larecette.getComment().toString());
+
         Log.d("RecetteIO",larecette.getVoters()+"");
+        /*
+        String tempo = "";
+        for (String string : printComment) {
+            tempo = tempo + "\n" + string;
+        }*/
     }
-    private void choiceRecipe(){
+    private void choiceRecipe() {
         String value = getIntent().getStringExtra("regimeChoice");
+        String valueTemp = getIntent().getStringExtra("tempChoice");
+
         // on lance le processus
         RecetteIO.init(this);
-        afficheTest=RecetteIO.loadRecipesFromJson(this);
-        Log.d("RecetteIO","type rectte"+value);
+        //afficheTest = RecetteIO.loadRecipesFromJson(this);
+        Log.d("RecetteIO", "type recette " + "ma valeur est : " + valueTemp);
         ArrayList<DataRecette> filteredRecipes = new ArrayList<>();
 
-        for (DataRecette recette : afficheTest) {
-            if (recette.getType().equals(value)) {
-                filteredRecipes.add(recette);
+        if (valueTemp.equals("hot_meal")) {
+            String valueChoice = getIntent().getStringExtra("platsChoice");
+            Log.d("RecetteIO", "Passage dans la boucle chaud");
+            Log.d("RecetteIO", "Ma valeur de plat est " + valueChoice);
+
+            for (DataRecette recette : afficheTest) {
+                Log.d("RecetteIO", "Le type est" + recette.getType());
+                if (recette.getType().equals(valueChoice)) {
+                    filteredRecipes.add(recette);
+                }
             }
 
-        }
-        if (filteredRecipes.size()>0) {
-            Random random = new Random();
-            int randomIndex = random.nextInt(filteredRecipes.size());
-            Log.d("RecetteIO","Recette Index" + randomIndex);
+            if (!filteredRecipes.isEmpty()) {
+                Random random = new Random();
+                int randomIndex = random.nextInt(filteredRecipes.size());
+                larecette = filteredRecipes.get(randomIndex);
+                Log.d("RecetteIO", "La Recette " + larecette.getNomRecipe());
+            } else {
+                Log.d("RecetteIO", "Aucune recette ne correspond au choix de plat.");
+                larecette=afficheTest.get(0);
+                // Vous pouvez ajouter un message d'erreur ou une logique de secours ici.
+            }
+        } else if (valueTemp.equals("cold_meal")) {
+            Log.d("RecetteIO", "Passage dans la boucle froid");
 
-            larecette = filteredRecipes.get(randomIndex);
-            Log.d("RecetteIO", "La Recette " + larecette.getNomRecipe());
+            for (DataRecette recette : afficheTest) {
+                if (recette.getType().equals(value)) {
+                    filteredRecipes.add(recette);
+                }
+            }
+
+            if (!filteredRecipes.isEmpty()) {
+                Random random = new Random();
+                int randomIndex = random.nextInt(filteredRecipes.size());
+                larecette = filteredRecipes.get(randomIndex);
+                Log.d("RecetteIO", "La Recette " + larecette.getNomRecipe());
+            } else {
+                Log.d("RecetteIO", "Aucune recette ne correspond au choix de régime.");
+                // Vous pouvez ajouter un message d'erreur ou une logique de secours ici.
+            }
+        } else {
+            Log.d("RecetteIO", "Passage dans la boucle erreur");
+            larecette = afficheTest.get(3);
         }
-        else {
-            larecette=afficheTest.get(0);
-        }
-        displayQuestion();
+
+        displayRecipe();
     }
     private void demanderPermission() {
         // verifie si nous avons les permissions de continuer

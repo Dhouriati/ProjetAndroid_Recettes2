@@ -26,22 +26,22 @@ public class Chaud_Froid extends AppCompatActivity {
         imageBtnCold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextActivityFroid("You want cold meal");
+                nextActivityFroid("cold_meal");
             }
         });
         imageBtnHot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextActivity("You want hot meal");
+                nextActivity("hot_meal");
             }
         });
     }
     //Intent pour passer à aux équipements
-    public void nextActivity(String value_cold) {
+    public void nextActivity(String value_hot) {
         Log.d("Chaud_Froid", "imageBtnCold clicked");
-        // Handle logic for imageBtnCold click
+        // Handle logic for hot recipe click
         Intent intent = new Intent(Chaud_Froid.this, PlatsChaudsEqui.class);
-        intent.putExtra("tempChoice", value_cold);
+        intent.putExtra("tempChoice", value_hot);
         intent.putExtra("regimeChoice", this.getIntent().getStringExtra("regimeChoice"));
         startActivity(intent);
     }

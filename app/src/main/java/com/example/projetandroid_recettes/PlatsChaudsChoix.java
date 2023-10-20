@@ -25,28 +25,28 @@ public class PlatsChaudsChoix extends AppCompatActivity {
         saladCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextAllChoice("You choose an Appetizer ");
+                nextAllChoice("Appetizer");
             }
         });
         dessertCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextAllChoice("You choose a Dessert ");
+                nextAllChoice("Dessert");
             }
         });
         mainCourseCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextAllChoice("You choose a MainCourse");
+                nextAllChoice("MainCourse");
             }
         });
     }
 
-    public void nextAllChoice(String value_cold) {
-        Log.d("CheckedBox", "imageBtnCold clicked");
-        // Handle logic for imageBtnCold click
+    public void nextAllChoice(String value_hot) {
+        Log.d("CheckedBox", "Type of recipe clicked");
+        // Handle logic for type of recipe click
         Intent intent = new Intent(PlatsChaudsChoix.this, AllChoice.class);
-        intent.putExtra("platsChoice", value_cold);
+        intent.putExtra("platsChoice", value_hot);
         intent.putExtra("equipChoice", this.getIntent().getStringExtra("equipChoice"));
         intent.putExtra("tempChoice", this.getIntent().getStringExtra("tempChoice"));
         intent.putExtra("regimeChoice", this.getIntent().getStringExtra("regimeChoice"));

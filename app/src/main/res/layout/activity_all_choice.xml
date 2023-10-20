@@ -152,7 +152,7 @@
                 style="@style/btnBC"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
-                android:onClick="ronClick"
+                android:onClick="onClick"
                 android:text="@string/btnBack" />
         </LinearLayout>
 
