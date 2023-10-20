@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import java.util.ArrayList;
 
-
-
 public class activity_rating extends AppCompatActivity {
     private RatingBar ratingBar;
     private EditText Comment;
@@ -39,13 +37,13 @@ public class activity_rating extends AppCompatActivity {
                 larecette=recette;
                 break;
             }}
-        //si la recette est null la première est prise
+        //if the recipe is null, the first one is taken
         larecette= larecette==null ? afficheTest.get(0) : larecette;
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 tempRating = rating;
-                Log.d("RecetteIO", "rating temporaire "+tempRating);
+                Log.d("Rating", "temporary rating "+tempRating);
             }
         });
     }
@@ -58,14 +56,14 @@ public class activity_rating extends AppCompatActivity {
         return Comment.getText().toString();
     }
     private void saveFeedback() {
-        // Affichage du rating de l'utilisateur
+        // User rating display
         ratingsList.add(getRatingBar());
         updateRating();
         Toast.makeText(this, "Rating: " + getRatingBar() + "\nComment: " + getUserComment(), Toast.LENGTH_SHORT).show();
     }
 
 
-    //Pour le calcul de la moy, on va prendre le rating de l'utilisateur + rajouter à l'ancien rating des autres utilisateurs
+    //To calculate the average, we'll take the user's rating + add the old rating of the other users.
     private float calculateAverageRating(float newRating) {
         float totalR = newRating;
 

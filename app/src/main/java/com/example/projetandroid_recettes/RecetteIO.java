@@ -1,7 +1,6 @@
 package com.example.projetandroid_recettes;
 
 import android.content.Context;
-import android.os.Environment;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -15,34 +14,33 @@ import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class RecetteIO {
 
     public static void saveJsonToFile(Context context, JSONObject jsonObject) {
         try {
-            // Vérifie si le stockage externe est disponible pour l'écriture
+            // Checks if external storage is available for writing
 
-            // Crée un dossier s'il n'existe pas
+            // Creates a folder if it doesn't exist
             File dir = new File(context.getFilesDir() + "/MyRecette");
 
             if (!dir.exists()) {
                 dir.mkdirs();
             }
-            Log.d("RecetteIO","Repertoire sauvegarde : " + dir.getAbsolutePath());
+            Log.d("RecetteIO","Saved directory in : " + dir.getAbsolutePath());
 
-            // Crée le fichier JSON dans le dossier
+            // Creates the JSON file in the folder
             File file = new File(dir, getFileName());
 
-            // Écrit le JSON dans le fichier
+            // Writes the JSON to the file
             FileOutputStream fOut = new FileOutputStream(file);
             OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
             myOutWriter.append(jsonObject.toString());
             myOutWriter.close();
             fOut.close();
 
-            Log.d("RecetteIO","File saved successfully: " + file.getAbsolutePath());
+            Log.d("RecetteIO","File saved successfully in : " + file.getAbsolutePath());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -53,10 +51,10 @@ public class RecetteIO {
 
         try {
 
-            // Obtient le fichier JSON dans le dossier
+            // Gets the JSON file in the folder
             File file = new File(context.getFilesDir() + "/MyRecette", getFileName());
             Log.d("RecetteIO","Read Json : " + file.getAbsolutePath());
-            // Lit le contenu du fichier JSON
+            // Reads the contents of the JSON file
             FileInputStream fileInputStream = new FileInputStream(file);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -67,10 +65,10 @@ public class RecetteIO {
                 stringBuilder.append(line);
             }
 
-            // Convertit la chaîne JSON en objet JSONObject
+            // Converts JSON string to JSONObject
             jsonObject = new JSONObject(stringBuilder.toString());
 
-            // Ferme les flux
+            // Closes flows
             bufferedReader.close();
             inputStreamReader.close();
             fileInputStream.close();
@@ -81,13 +79,13 @@ public class RecetteIO {
 
         return jsonObject;
     }
-    // Fonction pour sauvegarder une liste d'objets DataRecette dans un fichier JSON
+    // Function for saving a list of DataRecette objects in a JSON file
     public static void saveRecipesToJson(Context context, List<DataRecette> recipes) {
         try {
-            // Crée un JSONArray pour stocker les recettes
+            // Creates a JSONArray to store recipes
             JSONArray jsonArray = new JSONArray();
 
-            // Convertit chaque objet DataRecette en JSONObject et l'ajoute au tableau
+            // Converts each DataRecette object into a JSONObject and adds it to the array
             for (DataRecette recipe : recipes) {
                 JSONObject recipeJson = new JSONObject();
                 recipeJson.put("nomRecipe", recipe.getNomRecipe());
@@ -107,35 +105,35 @@ public class RecetteIO {
                 jsonArray.put(recipeJson);
             }
 
-            // Convertit le tableau JSON en un seul JSONObject
+            // Converts the JSON array into a single JSONObject
             JSONObject finalJsonObject = new JSONObject();
             finalJsonObject.put("recipes", jsonArray);
 
-            // Utilise la fonction saveJsonToFile pour sauvegarder le JSONObject dans un fichier
+            // Use the saveJsonToFile function to save the JSONObject to a file.
             saveJsonToFile(context, finalJsonObject);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    // Fonction pour charger une liste d'objets DataRecette à partir d'un fichier JSON
+    // Function for loading a list of DataRecette objects from a JSON file
     public static ArrayList<DataRecette> loadRecipesFromJson(Context context) {
         ArrayList<DataRecette> recipes = new ArrayList<>();
         //List<String> comments = new ArrayList<>();
 
         try {
-            // Utilise la fonction readJsonFromFile pour lire le JSONObject depuis le fichier
+            // Use the readJsonFromFile function to read the JSONObject from the
             JSONObject jsonObject = readJsonFromFile(context);
 
             if (jsonObject != null && jsonObject.has("recipes")) {
-                // Obtient le tableau JSON des recettes
+                // Gets the JSON table of recipes
                 JSONArray jsonArray = jsonObject.getJSONArray("recipes");
 
-                // Parcourt le tableau pour convertir chaque objet JSON en DataRecette
+                // Scans the array to convert each JSON object into a DataRecette
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject recipeJson = jsonArray.getJSONObject(i);
 
-                    // Crée un nouvel objet DataRecette en utilisant les données du JSONObject
+                    // Creates a new DataRecette object using data from the JSONObject
                     DataRecette recipe = new DataRecette(
                             recipeJson.optString("nomRecipe"),
                             recipeJson.optString("nomIngredient1"),
@@ -153,7 +151,7 @@ public class RecetteIO {
                             //comments
                     );
 
-                    // Ajoute la recette à la liste
+                    // Add recipe to list
                     recipes.add(recipe);
                 }
             }
@@ -164,17 +162,17 @@ public class RecetteIO {
 
         return recipes;
     }
-    // Fonction pour initialiser le fichier JSON
+    // Function to initialize the JSON file
     public static void init(Context context) {
         File dir = new File(context.getFilesDir()+ "/MyRecette/");
         if (!dir.exists()) {
-            // Le répertoire n'existe pas, on le crée
+            // if the directory doesn't exist, we create it
             dir.mkdirs();
         }
 
         File file = new File(dir, getFileName());
         if (!file.exists()) {
-            // Le fichier n'existe pas, on crée un nouveau fichier avec le contenu initial
+            // The file does not exist, so we create a new file with the original contents
 
             try {
                 ArrayList<DataRecette> listerecette= new ArrayList<>();
@@ -233,12 +231,12 @@ public class RecetteIO {
     }
     public static void updateRecipeByName(Context context, String recipeName, DataRecette updatedRecipe) {
         try {
-            // Lire les données JSON existantes depuis le fichier
+            // Read existing JSON data from the file
             JSONObject jsonObject = readJsonFromFile(context);
 
-            // Vérifier si le fichier JSON est valide
+            // Check if the JSON file is valid
             if (jsonObject != null) {
-                // Récupérer l'array de recettes
+                // Retrieve the recipe array
                 JSONArray recipesArray = null;
                 try {
                     recipesArray = jsonObject.getJSONArray("recipes");
@@ -246,12 +244,12 @@ public class RecetteIO {
                     throw new RuntimeException(e);
                 }
 
-                // Parcourir toutes les recettes pour trouver celle avec le nom spécifié
+                // Browse all recipes to find the one with the specified name
                 for (int i = 0; i < recipesArray.length(); i++) {
                     JSONObject recipeObject = recipesArray.getJSONObject(i);
                     String currentRecipeName = recipeObject.getString("nomRecipe");
 
-                    // Si le nom correspond, mettre à jour les données de la recette
+                    // If name matches, update recipe data
                     if (currentRecipeName.equals(recipeName)) {
                         recipeObject.put("nomIngredient1", updatedRecipe.getNomIngredient1());
                         recipeObject.put("nomIngredient2", updatedRecipe.getNomIngredient2());
@@ -266,12 +264,11 @@ public class RecetteIO {
                         recipeObject.put("type", updatedRecipe.getType());
                         recipeObject.put("comment", updatedRecipe.getComment());
 
-
                         break;
                     }
                 }
 
-                // Enregistrez les modifications dans le fichier
+                // Save the changes in the file
                 saveJsonToFile(context, jsonObject);
             }
         } catch (JSONException e) {
@@ -281,6 +278,5 @@ public class RecetteIO {
     public static String getFileName(){
         return "recette.json";
     }
-
 
 }

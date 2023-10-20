@@ -2,7 +2,6 @@ package com.example.projetandroid_recettes;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -12,7 +11,7 @@ public class DbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "RecetteConnex.db";
-    // Table pour stocker les informations de l'utilisateur
+    // Table for storing user information
     public static final String TABLE_USER = "Connexion";
     public static final String COLUMN_ID = "idUser";
     public static final String COLUMN_FIRST_NAME = "nameUser";
@@ -46,7 +45,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 COLUMN_LAST_NAME + " TEXT, " +
                 COLUMN_Age + " TEXT, " +
                 COLUMN_Gender + " TEXT);";
-        // Exécutez votre requête SQL pour créer la table
+        // Execute the SQL query to create the table
         db.execSQL(query);
         Log.d("Database", "Création de la base de donnée");
     }
@@ -83,8 +82,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Cette méthode est appelée lorsqu'une mise à niveau de la base de données est nécessaire.
-        // Vous pouvez mettre à jour la structure de la base de données ici.
+        // Upgrade the database
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
         onCreate(db);
         Log.d("Database", "Database upgraded successfully");

@@ -1,6 +1,7 @@
 package com.example.projetandroid_recettes;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.Manifest;
 import androidx.annotation.NonNull;
 
@@ -9,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +37,6 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recette);
-        // Vérifie si la permission est accordée
 
         textViewNomRecette = findViewById(R.id.textViewNomRecette);
         textViewIngredients = findViewById(R.id.textViewIngredients);
@@ -45,11 +44,11 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
         textViewRating=findViewById(R.id.textViewRating);
         textViewAllComment=findViewById(R.id.textViewAllComment);
 
-        //Button btnNext = findViewById(R.id.btnNext);
+        // Checks if permission is granted
         demanderPermission();
     }
     public void ratingPage (View v) {
-
+        //Go to the rating page
         Intent intent = new Intent(this, activity_rating.class);
         intent.putExtra("recetteName", larecette.getNomRecipe());
         startActivity(intent);
@@ -68,6 +67,7 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
         ingr = ingr + "Last ingredient : "+larecette.getNomIngredient4();
         textViewIngredients.setText(ingr);
 
+        // Display information about the step
         String step;
         step = "First step : "+larecette.getStep1() + "\n";
         step = step + "Second step : "+larecette.getStep2() + "\n";
@@ -75,84 +75,83 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
         step = step + "Last step : "+larecette.getStep4();
         textViewEtapes.setText(step);
         textViewRating.setText("Note : "+larecette.getRating()+"/"+(larecette.getVoters()*5));
-        textViewAllComment.setText(larecette.getComment().toString());
 
-        Log.d("RecetteIO",larecette.getVoters()+"");
+        Log.d("Recipe",larecette.getVoters()+"");
         /*
+        //Display list of all comment
         String tempo = "";
         for (String string : printComment) {
             tempo = tempo + "\n" + string;
-        }*/
+        }
+        textViewAllComment.setText(larecette.getComment().toString());
+        */
     }
     private void choiceRecipe() {
         String value = getIntent().getStringExtra("regimeChoice");
         String valueTemp = getIntent().getStringExtra("tempChoice");
 
-        // on lance le processus
+        // Launch the process
         RecetteIO.init(this);
-        //afficheTest = RecetteIO.loadRecipesFromJson(this);
-        Log.d("RecetteIO", "type recette " + "ma valeur est : " + valueTemp);
+
+        Log.d("Recipe", "My recipe type value is : " + valueTemp);
         ArrayList<DataRecette> filteredRecipes = new ArrayList<>();
 
         if (valueTemp.equals("hot_meal")) {
             String valueChoice = getIntent().getStringExtra("platsChoice");
-            Log.d("RecetteIO", "Passage dans la boucle chaud");
-            Log.d("RecetteIO", "Ma valeur de plat est " + valueChoice);
+            Log.d("Recipe", "Passage through the hot meal loop");
+            Log.d("Recipe", "My choice value is " + valueChoice);
 
             for (DataRecette recette : afficheTest) {
-                Log.d("RecetteIO", "Le type est" + recette.getType());
+                Log.d("Recipe", "Type is" + recette.getType());
                 if (recette.getType().equals(valueChoice)) {
                     filteredRecipes.add(recette);
                 }
             }
-
+            //if the table is not empty (means that there is min recipe which match)
             if (!filteredRecipes.isEmpty()) {
                 Random random = new Random();
-                int randomIndex = random.nextInt(filteredRecipes.size());
+                int randomIndex = random.nextInt(filteredRecipes.size()); //Generates a random number to determine which recipe to display
                 larecette = filteredRecipes.get(randomIndex);
-                Log.d("RecetteIO", "La Recette " + larecette.getNomRecipe());
+                Log.d("Recipe", "The recipe is " + larecette.getNomRecipe());
             } else {
-                Log.d("RecetteIO", "Aucune recette ne correspond au choix de plat.");
-                larecette=afficheTest.get(0);
-                // Vous pouvez ajouter un message d'erreur ou une logique de secours ici.
+                Log.d("Recipe", "No recipe corresponds to the choice of dish");
+                larecette=afficheTest.get(0); //default value if error
             }
         } else if (valueTemp.equals("cold_meal")) {
-            Log.d("RecetteIO", "Passage dans la boucle froid");
+            Log.d("Recipe", "Passage through the cold meal loop");
 
-            for (DataRecette recette : afficheTest) {
-                if (recette.getType().equals(value)) {
-                    filteredRecipes.add(recette);
+            for (DataRecette recipe : afficheTest) {
+                if (recipe.getType().equals(value)) {
+                    filteredRecipes.add(recipe);
                 }
             }
-
             if (!filteredRecipes.isEmpty()) {
                 Random random = new Random();
                 int randomIndex = random.nextInt(filteredRecipes.size());
                 larecette = filteredRecipes.get(randomIndex);
-                Log.d("RecetteIO", "La Recette " + larecette.getNomRecipe());
+                Log.d("Recipe", "The recipe is " + larecette.getNomRecipe());
             } else {
-                Log.d("RecetteIO", "Aucune recette ne correspond au choix de régime.");
-                // Vous pouvez ajouter un message d'erreur ou une logique de secours ici.
+                Log.d("Recipe", "No recipe corresponds to the choice of dish");
             }
         } else {
-            Log.d("RecetteIO", "Passage dans la boucle erreur");
-            larecette = afficheTest.get(3);
+            Log.d("Recipe", "Passage through the error loop");
+            larecette = afficheTest.get(0);//default value if error
         }
 
-        displayRecipe();
+        displayRecipe();//display recipe selected
     }
     private void demanderPermission() {
-        // verifie si nous avons les permissions de continuer
+        // check if we have permission to continue
         if(EasyPermissions.hasPermissions(this,  Build.VERSION.SDK_INT >=33 ? permissionsWriteRead : oldPermissionsWriteRead)){
-            // si les permissions sont deja accepter
-            // on lance le processus
+            // if permissions are already accepted
+            // Launch the process
             choiceRecipe();
 
         }else{
-            // sinon on demande les permissions d'y acceder
+            // if not, ask for access permissions
             EasyPermissions.requestPermissions(
                     this,
-                    "Accepter les permissions pour pouvoir continuer",
+                    "Accept permissions to continue",
                     100,
                     Build.VERSION.SDK_INT >=33 ? permissionsWriteRead : oldPermissionsWriteRead
             );
@@ -162,27 +161,27 @@ public class Recette extends AppCompatActivity implements EasyPermissions.Permis
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        // nous capturons la requette et la passons a EasyPermissions
+        //Pass request to EasyPermissions
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
         if( requestCode ==100 && perms.size() ==2) {
-            // si les permissions nous sont accorder
+            // if permissions are granted
             choiceRecipe();
         }
     }
 
     @Override
     public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
-        // sil nous refuses toutes les permissions
+        // if all permissions are denied
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
-            // nous lui proposons d'aller nous les accorder dans ses parametres
+            // Adjust suggestions in settings
             new AppSettingsDialog.Builder(this).build().show();
         }else{
-            // sinon nous lui affichons un message
-            Toast.makeText(getApplicationContext(), "Vous n'avez pas accepter les permissions", Toast.LENGTH_SHORT).show();
+            // else display an error message
+            Toast.makeText(getApplicationContext(), "You have not accepted the permissions. Accept them to continue", Toast.LENGTH_SHORT).show();
         }
     }
 }
