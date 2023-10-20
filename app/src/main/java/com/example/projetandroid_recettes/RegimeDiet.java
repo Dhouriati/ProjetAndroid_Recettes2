@@ -35,17 +35,14 @@ public class RegimeDiet extends AppCompatActivity {
         buttonContinue = findViewById(R.id.buttonContinue);
         buttonExit = findViewById(R.id.buttonExit);
 
-
-
-
     }
     public void ChoiceHot (View v) {
-        // Récupérer les choix de l'utilisateur
+        // Recover user's choices
         boolean isSwitchOn = switchRegime.isChecked();
         boolean isCheckBoxChecked = anyRegime.isChecked();
 
-        // Si checkbox le, il n'y a aucun régime
-        // Déterminer le régime en fonction des choix de l'utilisateur
+        // If there is a checkbox, there is not regime
+        // Determine regime according to user's choice
         if (isCheckBoxChecked ) {
             regimeChoice = "No Restriction";
         } else if (isSwitchOn) {
