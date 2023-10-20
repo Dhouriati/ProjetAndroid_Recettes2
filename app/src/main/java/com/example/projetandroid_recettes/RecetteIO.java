@@ -102,7 +102,7 @@ public class RecetteIO {
                 recipeJson.put("rating", recipe.getRating());
                 recipeJson.put("voters", recipe.getVoters());
                 recipeJson.put("type", recipe.getType());
-                //recipeJson.put("comment", recipe.getComment());
+                recipeJson.put("comment", recipe.getComment());
 
                 jsonArray.put(recipeJson);
             }
@@ -148,7 +148,8 @@ public class RecetteIO {
                             recipeJson.optString("step4"),
                             (float) recipeJson.optDouble("rating"),
                             recipeJson.optInt("voters"),
-                            recipeJson.optString("type")
+                            recipeJson.optString("type"),
+                            recipeJson.optString("comment")
                             //comments
                     );
 
@@ -184,7 +185,7 @@ public class RecetteIO {
                         "Add the tomatoes and apples", "Mix all ingredient together",
                         0,
                         1,
-                        "Vegan"
+                        "Appetizer", "I like it"
                 ));
                 listerecette.add(new DataRecette(
                         "Vegetarian steak with spinach", "Rice",
@@ -195,7 +196,7 @@ public class RecetteIO {
                         "Cook all together and add spices before eating",
                         3,
                         1,
-                        "Vegan"
+                        "Vegan", "I like it"
                 ));
                 listerecette.add(new DataRecette(
                         "Pancakes with mango", "Flour",
@@ -204,7 +205,7 @@ public class RecetteIO {
                         "Mix gently with a whisk, adding the milk as you go.", "Heat an oiled frying pan. Cook all the crêpes in this way over a low heat.",
                         3,
                         1,
-                        "Vegetarian"
+                        "Dessert", "I like it"
                 ));
                 listerecette.add(new DataRecette(
                         "Chili con carne", "kidney beans",
@@ -213,7 +214,16 @@ public class RecetteIO {
                         "Add wheat", "Add the chili sauce and mix well.",
                         3,
                         1,
-                        "No Restriction"
+                        "No Restriction", "I like it"
+                ));
+                listerecette.add(new DataRecette(
+                        "Cantonese rice", "Rice",
+                        "Egg", "diced ham", "peas",
+                        "Cook the rice" ,"Make scrambled eggs",
+                        "Add peas, diced ham and scrambled eggs", "Mix together and serve hot",
+                        3,
+                        1,
+                        "No Restriction", "I like it"
                 ));
                 saveRecipesToJson(context, listerecette);
             } catch (Exception e) {
@@ -254,7 +264,7 @@ public class RecetteIO {
                         recipeObject.put("rating", updatedRecipe.getRating());
                         recipeObject.put("voters", updatedRecipe.getVoters());
                         recipeObject.put("type", updatedRecipe.getType());
-                        //recipeObject.put("commment", updatedRecipe.getComment());
+                        recipeObject.put("comment", updatedRecipe.getComment());
 
 
                         break;
