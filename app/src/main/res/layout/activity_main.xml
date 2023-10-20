@@ -22,7 +22,8 @@
             android:id="@+id/SurnameUser"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:hint="@string/SurnameUser" />
+            android:hint="@string/SurnameUser"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -40,7 +41,8 @@
             android:id="@+id/FirstnameUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/FirstnameUser" />
+            android:hint="@string/FirstnameUser"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -68,5 +70,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.688"
-        app:srcCompat="@drawable/icons8_user_64" />
+        app:srcCompat="@drawable/icons8_user_64"
+        tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

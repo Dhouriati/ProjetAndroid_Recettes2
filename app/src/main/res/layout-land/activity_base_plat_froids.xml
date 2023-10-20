@@ -11,12 +11,13 @@
         android:id="@+id/baseFroid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:text="@string/baseFroid"
         android:textColor="@color/bg_txtTitle"
         android:textSize="26sp"
-        android:textStyle = "bold"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,49 +31,47 @@
         android:padding="8dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonC"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.902"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/baseFroid"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonC"
         style="@style/btnBF"
-        android:layout_width="306dp"
-        android:layout_height="67dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="221dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="36dp"
         android:onClick="ChoiceProt"
         android:text="@string/buttonC"
-        app:layout_constraintBottom_toTopOf="@+id/buttonE"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="VisualLintButtonSize" />
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonE"
         style="@style/btnBC"
-        android:layout_width="298dp"
-        android:layout_height="66dp"
-        android:layout_marginBottom="60dp"
+        android:layout_width="201dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="40dp"
         android:onClick="onClick"
         android:text="@string/buttonExit1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="VisualLintButtonSize" />
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="188dp"
         android:layout_height="167dp"
-        app:layout_constraintBottom_toTopOf="@+id/choiceBase"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintBottom_toTopOf="@+id/buttonE"
+        app:layout_constraintEnd_toStartOf="@+id/choiceBase"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/baseFroid"
-        app:layout_constraintVertical_bias="0.845"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.635"
         app:srcCompat="@drawable/basefroid"
         tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>
